@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"text/template"
+	"time"
 )
 
 // Create writes a new blank migration file.
@@ -19,9 +20,11 @@ func CreateWithTemplate(db *sql.DB, dir string, migrationTemplate *template.Temp
 	// Initial version.
 	version := "00001"
 
+	/*
 	if last, err := migrations.Last(); err == nil {
 		version = fmt.Sprintf("%05v", last.Version+1)
-	}
+	}*/
+	version = time.Now().Format("20060102150405")
 
 	filename := fmt.Sprintf("%v_%v.%v", version, name, migrationType)
 
