@@ -12,7 +12,8 @@ import (
 
 // Create writes a new blank migration file.
 func CreateWithTemplate(db *sql.DB, dir string, migrationTemplate *template.Template, name, migrationType string) error {
-	migrations, err := CollectMigrations(dir, minVersion, maxVersion)
+	// migrations, err := CollectMigrations(dir, minVersion, maxVersion)
+	_, err := CollectMigrations(dir, minVersion, maxVersion)
 	if err != nil {
 		return err
 	}
