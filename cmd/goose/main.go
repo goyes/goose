@@ -6,7 +6,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/pressly/goose"
+	// "github.com/pressly/goose"
+	"github.com/goyes/goose"
 
 	// Init DB drivers.
 	_ "github.com/go-sql-driver/mysql"
